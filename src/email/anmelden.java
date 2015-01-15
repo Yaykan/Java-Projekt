@@ -9,6 +9,7 @@ public class anmelden{
 	static String title = "Java E-Mail-Client Connection Init Beta v.01";
 	
 	public anmelden(){
+		
 		fenster = new JFrame(title);
 		fenster.setSize(600,600);
 		fenster.setLayout(new BorderLayout());

@@ -1,5 +1,5 @@
 /**
- * Author @ SŸpriz Yaykan, Ali Metehan Selvi, Muhammed Furkan YŸcel
+ * Author @ Suepriz Yaykan, Ali Metehan Selvi, Muhammed Furkan Yuecel
  */
 package email;
 
