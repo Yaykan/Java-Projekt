@@ -11,12 +11,10 @@ public class anmelden{
 	public anmelden(){
 		fenster = new JFrame(title);
 		fenster.setSize(600,600);
-		fenster.setLocation(300,300);
-		fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fenster.setLayout(new BorderLayout());
 		
 		JPanel panel = new JPanel();
-		panel.setLayout(new GridLayout(6,2));
+		panel.setLayout(new GridLayout(5,2));
 		panel.setOpaque(true);
 		
 		// Label for SMTP
@@ -63,6 +61,8 @@ public class anmelden{
 		
 		
 		fenster.add(panel);
+		fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		fenster.setLocationRelativeTo(null);
 		fenster.setVisible(true);
 		
 	}
