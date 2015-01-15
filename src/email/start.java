@@ -1,3 +1,6 @@
+/**
+ * created from SŸpriz Yaykan, Ali Selvi, Muhammed Furkan YŸcel
+ */
 package email;
 
 public class start {
