@@ -22,13 +22,12 @@ public class HauptGUI {
 		bar.add(menu2);
 		frame.add(bar, BorderLayout.NORTH);
 		
-		JPanel backg = new JPanel(new BorderLayout());
-		
 		String [] columns = {"sender", "subject"};
 		Object [][] data = {{"Furkan Yuecel", ""}, {"Suepriz Yaykan", ""}, {"Ali Selvi", ""}, {"Test", "test"}};
 		JTable table = new JTable(data, columns);
 		table.setRowSelectionAllowed(true);
-		JScrollPane scroll = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		JScrollPane scroll = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+				ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scroll.setPreferredSize(new Dimension(200, 650));
 		
 		
@@ -41,20 +40,28 @@ public class HauptGUI {
 		tabbed.addTab("Sent", tab2);
 		tabbed.addTab("Tab 3", tab3);
 				
-		JTextArea area = new JTextArea("Text entry here: ", 50, 100);
+		JTextArea area = new JTextArea("\n Text entry here: ", 50, 100);
 		JPanel panel1 = new JPanel(new GridLayout());
 		panel1.add(area);
 		
-		JPanel main = new JPanel();
+		JPanel rightBorder = new JPanel(new BorderLayout());
+		JPanel labelPanel = new JPanel(new GridLayout(3,1));
+		JLabel sender = new JLabel("   Sender: \t");
+		JLabel receiver = new JLabel("   Receiver: \t");
+		JLabel subject = new JLabel("   Subject: \t");
+		JLabel date = new JLabel("   Date: \t");
+		labelPanel.add(sender);
+		labelPanel.add(receiver);
+		labelPanel.add(subject);
+		labelPanel.add(date);
+		rightBorder.add(labelPanel, BorderLayout.NORTH);
+		rightBorder.add(area);
 		
-		main.add(tabbed);
-		main.add(area);
-		
+		JPanel backg = new JPanel(new BorderLayout());
 		backg.add(tabbed, BorderLayout.WEST);
-		backg.add(area, BorderLayout.CENTER);
+		backg.add(rightBorder, BorderLayout.CENTER);
 		
 		frame.getContentPane().add(backg, BorderLayout.CENTER);
-		
 		
 		frame.setSize(800, 480);
 		frame.setLocationRelativeTo(null);
