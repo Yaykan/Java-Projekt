@@ -1,10 +1,11 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
 
 import javax.swing.*;
 public class anmelden{
 	private JFrame fenster = new JFrame();
-	static String title = "Java E-Mail-Client Beta v.01";
+	static String title = "Java E-Mail-Client Connection Init Beta v.01";
 	
 	public anmelden(){
 		fenster = new JFrame(title);
@@ -14,6 +15,7 @@ public class anmelden{
 		fenster.setLayout(new BorderLayout());
 		
 		JPanel panel = new JPanel();
+		panel.setLayout(new GridLayout(6,2));
 		panel.setOpaque(true);
 		
 		// Label for SMTP
