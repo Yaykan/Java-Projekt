@@ -1,5 +1,5 @@
 /**
- * created from SŸpriz Yaykan, Ali Selvi, Muhammed Furkan YŸcel
+ * Author @ SŸpriz Yaykan, Ali Metehan Selvi, Muhammed Furkan YŸcel
  */
 package email;
 
