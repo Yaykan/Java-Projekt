@@ -2,72 +2,77 @@ package email;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
-public class anmelden{
-	private JFrame fenster = new JFrame();
-	static String title = "Java E-Mail-Client Connection Init Beta v.01";
+import javax.swing.plaf.basic.BasicBorders.RadioButtonBorder;
+public class anmelden {
 	
-	public anmelden(){
-		
-		fenster = new JFrame(title);
-		fenster.setSize(600,600);
-		fenster.setLayout(new BorderLayout());
-		
-		JPanel panel = new JPanel();
-		panel.setLayout(new GridLayout(5,2));
-		panel.setOpaque(true);
-		
-		// Label for SMTP
-		JLabel lsmtp = new JLabel("SMTP:");
-		panel.add(lsmtp);
+	private JDialog fenster = new JDialog();
+	static String title = "Java E-Mail-Client Connection Init Beta v.01";
+	public String ssmtp,simap,semail;
+	char[] spass;
+	
+	public anmelden(String title){
 		
 		// Textfield SMTP
 		JTextField smtp = new JTextField("Please enter SMTP server", 25);
-		smtp.setForeground(Color.black);
-		smtp.setBackground(Color.white);
-		panel.add(smtp);
+		ssmtp = smtp.getText();
 		
-		// Label for POP3
-		JLabel lpop3 = new JLabel("POP3:");
-		panel.add(lpop3);
 		
-		// Textfield POP3
-		JTextField pop3 = new JTextField("Please enter POP3 server", 25);
-		smtp.setForeground(Color.black);
-		smtp.setBackground(Color.white);
-		panel.add(pop3);
-		
-		// Label for E-Mail
-		JLabel lmail = new JLabel("Email:");
-		panel.add(lmail);
+		// Textfield IMAP
+		JTextField imap = new JTextField("Please enter IMAP server", 25);
+		simap = imap.getText();
 		
 		// Textfield Email
 		JTextField email = new JTextField("Please enter E-Mail Adress");
-		smtp.setForeground(Color.black);
-		smtp.setBackground(Color.white);
-		panel.add(email);
-		
-		// Label for Password
-		JLabel lpass = new JLabel("Password:");
-		panel.add(lpass);
+		semail = email.getText();
 		
 		// Passwordfield
 		JPasswordField pass = new JPasswordField("",15);
-		panel.add(pass);
+		spass = pass.getPassword();
 		
-		// Button for send
-		JButton senden = new JButton("Senden");
-		panel.add(senden);
+		// Remember me 
+		final JRadioButton remember = new JRadioButton("Remember me!");
 		
+		ActionListener action = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (remember.isSelected()) {
+					
+					
+				}
+				
+			}
+		};
 		
-		fenster.add(panel);
-		fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenster.setLocationRelativeTo(null);
-		fenster.setVisible(true);
+		Object[] props = {title,"IMAP",imap,"SMTP",smtp,"E-Mail:",email,"Password:",pass,remember};
+		
+		JOptionPane fenster = new JOptionPane(props, 
+				JOptionPane.PLAIN_MESSAGE,
+				JOptionPane.OK_CANCEL_OPTION);
+		fenster.createDialog(null,"Properties").setVisible(true);
+		
+		System.exit(0);
 		
 	}
 	
-	//public void actionPerfomed
+	public String getImap(){
+		return simap;
+	}
+	
+	public String getSmtp(){
+		return ssmtp;
+	}
+	
+	public String getEmail(){
+		return semail;
+	} 
+	
+	public String getPass(){
+		return String.valueOf(spass);
+	}
 	
 }
