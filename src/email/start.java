@@ -13,7 +13,7 @@ public class start {
 		new anmelden("Please enter your E-Mail Server!");
 		
 		// Starte Hauptfenster
-		new HauptGUI(title);
+		//new HauptGUI(title);
 	}
 
 }
