@@ -5,8 +5,11 @@ import java.awt.*;
 import javax.swing.*;
 
 public class HauptGUI {
-	
-	public static void main(String[] args) {
+	/*
+	 * @Author Furkan
+	 * habe es als standartkonstruktor geaendert, da wir es ueber start aufrufen koennen.
+	 */
+	public void HauptGUI(){
 		
 		JFrame frame = new JFrame("E-mail Client");
 		frame.getContentPane().setLayout(new BorderLayout());
