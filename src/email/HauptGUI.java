@@ -5,22 +5,30 @@ import java.awt.*;
 import javax.swing.*;
 
 public class HauptGUI {
+	
+	private JFrame frame;
+	private JMenuBar bar;
+	private JMenu menu1, menu2;
+	private JMenuItem item1, item2;
+	private JTable table;
+	private JScrollPane scroll;
+	private JTabbedPane tabbed;
+	private JPanel tab1, tab2, tab3, areaPanel, rightBorder, labelPanel, backgr;
+	private JTextArea area;
+	private JLabel sender, receiver, subject, date;
+	
 
-	/*
-	 * @Author Furkan
-	 * habe es als standartkonstruktor geaendert, da wir es ueber start aufrufen koennen.
-	 */
 	public HauptGUI(String title){
 		
-		JFrame frame = new JFrame(title);
+		frame = new JFrame(title);
 		frame.getContentPane().setLayout(new BorderLayout());
 		
-		JMenuBar bar = new JMenuBar();
-		JMenu menu1 = new JMenu("File");
-		JMenuItem item1 = new JMenuItem("Quit");
+		bar = new JMenuBar();
+		menu1 = new JMenu("File");
+		item1 = new JMenuItem("Quit");
 		menu1.add(item1);
-		JMenu menu2 = new JMenu("Help");
-		JMenuItem item2 = new JMenuItem("About");
+		menu2 = new JMenu("Help");
+		item2 = new JMenuItem("About");
 		menu2.add(item2);
 		bar.add(menu1);
 		bar.add(menu2);
@@ -28,32 +36,32 @@ public class HauptGUI {
 		
 		String [] columns = {"sender", "subject"};
 		Object [][] data = {{"Furkan Yuecel", ""}, {"Suepriz Yaykan", ""}, {"Ali Selvi", ""}, {"Test", "test"}};
-		JTable table = new JTable(data, columns);
+		table = new JTable(data, columns);
 		table.setRowSelectionAllowed(true);
-		JScrollPane scroll = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+		scroll = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
 				ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scroll.setPreferredSize(new Dimension(200, 650));
 		
 		
-		JTabbedPane tabbed = new JTabbedPane();
-		JPanel tab1 = new JPanel();
+		tabbed = new JTabbedPane();
+		tab1 = new JPanel();
 		tab1.add(scroll);
-		JPanel tab2 = new JPanel();
-		JPanel tab3 = new JPanel();
+		tab2 = new JPanel();
+		tab3 = new JPanel();
 		tabbed.addTab("Inbox", tab1);
 		tabbed.addTab("Sent", tab2);
 		tabbed.addTab("Tab 3", tab3);
 				
-		JTextArea area = new JTextArea("\n Text entry here: ", 50, 100);
-		JPanel panel1 = new JPanel(new GridLayout());
-		panel1.add(area);
+		area = new JTextArea("\n Text entry here: ", 50, 100);
+		areaPanel = new JPanel(new GridLayout());
+		areaPanel.add(area);
 		
-		JPanel rightBorder = new JPanel(new BorderLayout());
-		JPanel labelPanel = new JPanel(new GridLayout(3,1));
-		JLabel sender = new JLabel("   Sender: \t");
-		JLabel receiver = new JLabel("   Receiver: \t");
-		JLabel subject = new JLabel("   Subject: \t");
-		JLabel date = new JLabel("   Date: \t");
+		rightBorder = new JPanel(new BorderLayout());
+		labelPanel = new JPanel(new GridLayout(3,1));
+		sender = new JLabel("   Sender: \t");
+		receiver = new JLabel("   Receiver: \t");
+		subject = new JLabel("   Subject: \t");
+		date = new JLabel("   Date: \t");
 		labelPanel.add(sender);
 		labelPanel.add(receiver);
 		labelPanel.add(subject);
@@ -61,11 +69,11 @@ public class HauptGUI {
 		rightBorder.add(labelPanel, BorderLayout.NORTH);
 		rightBorder.add(area);
 		
-		JPanel backg = new JPanel(new BorderLayout());
-		backg.add(tabbed, BorderLayout.WEST);
-		backg.add(rightBorder, BorderLayout.CENTER);
+		backgr = new JPanel(new BorderLayout());
+		backgr.add(tabbed, BorderLayout.WEST);
+		backgr.add(rightBorder, BorderLayout.CENTER);
 		
-		frame.getContentPane().add(backg, BorderLayout.CENTER);
+		frame.getContentPane().add(backgr, BorderLayout.CENTER);
 		
 		frame.setSize(800, 480);
 		frame.setLocationRelativeTo(null);
