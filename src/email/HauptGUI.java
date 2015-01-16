@@ -17,7 +17,7 @@ public class HauptGUI {
 	private JTextArea area;
 	private JLabel sender, receiver, subject, date;
 	
-
+	
 	public HauptGUI(String title){
 		
 		frame = new JFrame(title);
@@ -51,7 +51,7 @@ public class HauptGUI {
 		tabbed.addTab("Inbox", tab1);
 		tabbed.addTab("Sent", tab2);
 		tabbed.addTab("Tab 3", tab3);
-				
+		
 		area = new JTextArea("\n Text entry here: ", 50, 100);
 		areaPanel = new JPanel(new GridLayout());
 		areaPanel.add(area);
@@ -80,5 +80,5 @@ public class HauptGUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
-	
+
 }
