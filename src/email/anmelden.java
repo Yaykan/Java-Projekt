@@ -7,16 +7,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 public class anmelden {
-	
-	private JDialog dialog = new JDialog();
+
 	private String ssmtp;
 	private String simap;
 	private String semail;
 	private String spass;
 	
 	public anmelden(String title){
-		int auswahl;
-		
 		// Textfield SMTP
 		JTextField smtp = new JTextField("Please enter SMTP server", 25);
 		
