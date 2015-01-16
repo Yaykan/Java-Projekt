@@ -13,7 +13,7 @@ public class anmelden {
 	private String semail;
 	private String spass;
 	
-	public anmelden(String title){
+	public anmelden(String meldung, String title){
 		// Textfield SMTP
 		JTextField smtp = new JTextField("Please enter SMTP server", 25);
 		
@@ -37,19 +37,20 @@ public class anmelden {
 				JOptionPane.PLAIN_MESSAGE,
 				JOptionPane.DEFAULT_OPTION);
 		fenster.createDialog(null,"Properties").setVisible(true);
-		
+
+		setSsmtp(smtp.getText());
+		setSimap(imap.getText());
+		setSemail(email.getText());
+		setSpass(pass.getPassword());
 		
 		// checked for remember properties from email server 
 		if (remember.getState()) {
-			setSsmtp(smtp.getText());
-			setSimap(imap.getText());
-			setSemail(email.getText());
-			setSpass(pass.getPassword());
 			System.out.println(getSsmtp()+getSimap()+getSemail()+getSpass());
-			
+			new save(getSsmtp(),getSimap(),getSemail(),getSpass());
+			new HauptGUI(title);
 			
 		} else {
-			System.exit(0);
+			new HauptGUI(title);
 		}
 		
 		System.exit(0);
