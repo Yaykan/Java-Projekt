@@ -5,13 +5,14 @@ import java.awt.*;
 import javax.swing.*;
 
 public class HauptGUI {
+
 	/*
 	 * @Author Furkan
 	 * habe es als standartkonstruktor geaendert, da wir es ueber start aufrufen koennen.
 	 */
-	public void HauptGUI(){
+	public HauptGUI(String title){
 		
-		JFrame frame = new JFrame("E-mail Client");
+		JFrame frame = new JFrame(title);
 		frame.getContentPane().setLayout(new BorderLayout());
 		
 		JMenuBar bar = new JMenuBar();

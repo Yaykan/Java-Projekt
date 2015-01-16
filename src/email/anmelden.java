@@ -8,7 +8,6 @@ import javax.swing.*;
 public class anmelden {
 	
 	private JDialog fenster = new JDialog();
-	static String title = "Java E-Mail-Client Connection Init Beta v.01";
 	private String ssmtp;
 	public String getSsmtp() {
 		return ssmtp;
